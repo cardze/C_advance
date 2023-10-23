@@ -3,6 +3,7 @@
 
 typedef struct num_storage
 {
+    // double linked list node
     int number;
     struct num_storage *next;
     struct num_storage *prev;
@@ -69,6 +70,8 @@ void sort_list(tNumStorHead *list, int data)
                 prev = tmp;
                 tmp = tmp->next;
             }
+            //      new_node
+            // prev          tmp
             new_node->prev = prev;
             prev->next = new_node;
             tmp->prev = new_node;
@@ -76,6 +79,8 @@ void sort_list(tNumStorHead *list, int data)
         }
         else if (data <= list->head->number)
         {
+            // new_node(new head)
+            //          list->head
             new_node->next = list->head;
             list->head->prev = new_node;
             list->head = new_node;
@@ -92,6 +97,11 @@ void sort_list(tNumStorHead *list, int data)
 
 void delete_last(tNumStorHead *list)
 {
+    // implement remove the last of node in list
+    // edge case : size of list is 0 -> send alert and return
+    //             size of list is 1 -> remove the only node
+    //             others :
+    //               remove and free the last, update the record in the list
     if (list->counts == 0)
     {
         printf("\tThere is nothing to delete.\n\n");
