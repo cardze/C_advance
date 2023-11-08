@@ -15,15 +15,18 @@ typedef struct num_stor_head
     int counts;
 } tNumStorHead;
 
-void init_list(tNumStorHead *list);
-void print_list(tNumStorHead *list);
-void sort_list(tNumStorHead *list, int data);
-void get_input(tNumStorHead *list);
-void delete_last(tNumStorHead *list);
 void add_number_to_list(tNumStorHead *list);
 void delete_number_on_list(tNumStorHead *list);
+void get_input(tNumStorHead *list);
+
+void init_list(tNumStorHead *list);
+void print_list(tNumStorHead *list);
 void add_node(tNumStorHead *list, int data, int pos, int is_add_front);
+void delete_node(tNumStorHead *list, int pos);
 tNumStorage *find_node(tNumStorHead *list, int pos);
+
+void sort_list(tNumStorHead *list, int data);
+void delete_last(tNumStorHead *list);
 
 int main(int argc, char **argv)
 {
