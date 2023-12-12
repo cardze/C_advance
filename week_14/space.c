@@ -83,7 +83,7 @@ int test_location(unsigned char *mask, int mask_length, int size)
         {
             end_mask = mask[end / 8];
             if (((end_mask >> (end % 8)) & 1) != 0){
-                i = end;
+                i = end+1;
                 break;
             }
             else
