@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "space.h": "c"
+        "space.h": "c",
+        "string.h": "c"
     }
 }
